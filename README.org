@@ -1,0 +1,49 @@
+#+TITLE: NEAD - New Environmental Archive Data
+
+
+* Table of contents                               :toc_3:noexport:
+- [[#warning][WARNING]]
+- [[#installation][Installation]]
+- [[#usage][Usage]]
+
+* WARNING
+
++ This is alpha level software under development.
++ Please contact Ken Mankoff <kdm@geus.dk> before using.
+
+* Installation
+
+#+BEGIN_SRC bash :results verbatim
+pip install git+https://github.com/mankoff/NEAD.git
+#+END_SRC
+
+Can be run in new environment, for example:
+
+Conda:
+
+#+BEGIN_SRC bash :results verbatim
+conda create -n NEAD python=3.8 pandas numpy # jupyter
+conda activate NEAD
+pip install --upgrade git+https://github.com/mankoff/NEAD.git
+#+END_SRC
+
+* Usage
+:PROPERTIES:
+:header-args:jupyter-python+: :kernel nead :session nead :exports both :results raw drawer :exports both
+:END:
+
+#+BEGIN_SRC jupyter-python 
+import nead.nead_io as nead
+df = nead.read_dsv("sample.dsv")
+df.head()
+#+END_SRC
+
+#+RESULTS:
+:RESULTS:
+: 'column_delimiter' appears to be 'space'
+| timestamp           |   TA |   RH |   VW |   ISWR |
+|---------------------+------+------+------+--------|
+| 2010-06-22 12:00:00 |  2   |   52 |  1.2 |    320 |
+| 2010-06-22 13:00:00 |  3   |   60 |  2.4 |    340 |
+| 2010-06-22 14:00:00 |  2.8 |   56 |  2   |    330 |
+:END:
