@@ -2,9 +2,14 @@
 
 
 * Table of contents                               :toc_3:noexport:
+- [[#citation][Citation]]
 - [[#warning][WARNING]]
 - [[#installation][Installation]]
 - [[#usage][Usage]]
+
+* Citation
+
+Iosifescu Enescu, I., Bavay, M., Plattner, G.-K. (2020). Sharing and reusing meteorological data. WMO Data Conference 2020 - Earth System Data Exchange in the 21st Century (Virtual Conference).
 
 * WARNING
 
