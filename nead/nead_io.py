@@ -1,73 +1,89 @@
 
 import pandas as pd
 
-def read_dsv(neadfile):
+def read_dsv(neadfile, **kw):
 
     with open(neadfile) as f:
-        fmt = f.readline(); assert( fmt[0:6] == "# NEAD" )
-        hdr = f.readline(); assert(hdr == "# [HEADER]\n")
+        fmt = f.readline();
+        assert(fmt[0] == "#")
+        assert(fmt.split("#")[1].strip() == "NEAD 1.0 UTF-8")
+        
+        hdr = f.readline()
+        assert(hdr[0] == "#")
+        assert(hdr.split("#")[1].strip() == "[HEADER]")
 
         line = ""
         attrs = {}
-        attrs["format"] = fmt.split("#")[1].strip()
+        attrs["__format__"] = fmt.split("#")[1].strip()
         while True:
             line = f.readline()
+            assert(line[0] == "#")
+            
             if line == "# [DATA]\n": break
-            s = line.split("=")
-            key = s[0].split("#")[1].strip()
-            attrs[key] = s[1].strip()
+            
+            key_eq_val = line.split("#")[1].strip()
+            assert("=" in key_eq_val)
+            key,val = [_.strip() for _ in key_eq_val.split("=")]
+
+            # The CD property is special. We need to convert
+            # from "space", "whitespace" or "tab" to regex string
+            # if the CD property is not a single character.
+            if key == "column_delimiter":
+                convert = {"space":' ', "whitespace":' ', "tab":'\t'}
+                if len(val) > 1: assert(val in convert.keys())
+                if val in convert.keys(): val = convert[val]
+
+            # CD property must be defined before these properties
+            if key in ["fields", "units_offset", "units_multiplier"]:
+                assert("column_delimiter" in attrs.keys())
+                
+            # If the CD property exists, use it to split any properties that contain it.
+            if "column_delimiter" in attrs.keys():
+                if attrs["column_delimiter"] in val:
+                    val = list(val.split(attrs["column_delimiter"]))
+
+            attrs[key] = val
     # done reading header
 
-    # handle special column delimiters
-    assert("column_delimiter" in attrs.keys())
-    if attrs["column_delimiter"] in ['" "', "' '", '\s+', "space"]:
-        print("'column_delimiter' appears to be 'space'")
-        attrs["column_delimiter"] = "\s+"
-    if attrs["column_delimiter"] in ['\t', "tab"]:
-        print("'column_delimiter' appears to be 'tab'")
-        attrs["column_delimiter"] = "\t"
-    delimiter=attrs["column_delimiter"]
-    
-    # split header fields on delimiter
-    assert("fields" in attrs.keys())       
-    for f in ["fields", "units_offset", "units_multiplier"]:
-        if f in attrs.keys():
-            # split on delimiter (or just ".split()" if delimiter is whitespace)
-            attrs[f] = attrs[f].split(delimiter if delimiter.isspace() else None)
-
-    header = attrs["fields"]
-    df = pd.read_csv(neadfile, comment="#", sep=delimiter, names=header, index_col=0, parse_dates=True)
+    df = pd.read_csv(neadfile,
+                     comment = "#",
+                     sep = attrs["column_delimiter"],
+                     names = attrs["fields"],
+                     **kw)
     df.attrs = attrs
     return df
 
 
 
-def write_dsv(df, filename=None, header=None):
+# def write_dsv(df, filename=None, header=None):
 
-    sep = df.attrs["column_delimiter"]
-    if sep[0:2] == '\\s':
-        sep = " "
-        sepstr = "space"
-    if sep[0:2] == '\\t':
-        sep = '\t'
-        sepstr = "tab"
-    
-    if header is None:
-        header = '# NEAD 0.1 ASCII\n'
-        header += '# [HEADER]\n'
-        for key in df.attrs:
-            if key == "format": continue
-            if isinstance(df.attrs[key], list):
-                header += '# ' + key + ' = ' + " ".join(str(i) for i in df.attrs[key]) + '\n'
-                continue
-            if key == "column_delimiter":
-                header += '# ' + key + ' = ' + sepstr + '\n'
-                continue
-            header += '# ' + key + ' = ' + str(df.attrs[key]) + '\n'
-        header += '# [DATA]\n'
+#     if header is None:
 
-    # ISO8601
-    df.index = df.index.strftime('%Y-%m-%dT%H:%M:%S')
-    with open(filename, "w") as f:
-        f.write(header)
-        f.write(df.to_csv(header=False, sep=sep))
+#         assert(df.attrs is not None)
+
+#         # convert column delimiter to both NEAD(human) and computer-useful values
+#         cds = {'\\s':"space", '\\s+':"whitespace", '\t':"tab"}
+#         cd = df.attrs["column_delimiter"]
+#         sepstr = cds[cd] if cd in cds.keys() else cd
+#         df.attrs.pop("column_delimiter") # we'll write it manually at top
+
+#         header = '# NEAD 1.0 UTF-8\n'
+#         header += '# [HEADER]\n'
+#         header += '## Written by pyNEAD\n'
+#         header += '# column_delimiter = ' + sepstr + '\n'
+
+#         for key in df.attrs:
+#             if isinstance(df.attrs[key], list):
+#                 header += '# ' + key + ' = ' + " ".join(str(i) for i in df.attrs[key]) + '\n'
+#             else:
+#                 header += '# ' + key + ' = ' + str(df.attrs[key]) + '\n'
+#         header += '# [DATA]\n'
+
+#     # Conert datetime columns to ISO-8601 format
+#     for c in df.columns:
+#         if df[c].dtype == "datetime64":
+#             df[c] = df[c].strftime('%Y-%m-%dT%H:%M:%S')
+            
+#     with open(filename, "w") as f:
+#         f.write(header)
+#         f.write(df.to_csv(header=False, sep=sep))
