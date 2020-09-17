@@ -3,6 +3,9 @@ import pandas as pd
 
 def read_dsv(neadfile, **kw):
 
+    CD_convert = {"space":'\s', "whitespace":'\s+', "tab":'\t'}
+    CD = None # shortcut for column delimiter, perhaps converted using above dictionary
+    
     with open(neadfile) as f:
         fmt = f.readline();
         assert(fmt[0] == "#")
@@ -29,9 +32,8 @@ def read_dsv(neadfile, **kw):
             # from "space", "whitespace" or "tab" to regex string
             # if the CD property is not a single character.
             if key == "column_delimiter":
-                convert = {"space":' ', "whitespace":' ', "tab":'\t'}
-                if len(val) > 1: assert(val in convert.keys())
-                if val in convert.keys(): val = convert[val]
+                if len(val) > 1: assert(val in CD_convert.keys())
+                CD = val if val not in CD_convert.keys() else CD_convert[val]
 
             # CD property must be defined before these properties
             if key in ["fields", "units_offset", "units_multiplier"]:
@@ -39,15 +41,14 @@ def read_dsv(neadfile, **kw):
                 
             # If the CD property exists, use it to split any properties that contain it.
             if "column_delimiter" in attrs.keys():
-                if attrs["column_delimiter"] in val:
-                    val = list(val.split(attrs["column_delimiter"]))
+                val = val.split(CD) if CD not in CD_convert.values() else val.split()
 
             attrs[key] = val
     # done reading header
 
     df = pd.read_csv(neadfile,
                      comment = "#",
-                     sep = attrs["column_delimiter"],
+                     sep = CD,
                      names = attrs["fields"],
                      **kw)
     df.attrs = attrs
