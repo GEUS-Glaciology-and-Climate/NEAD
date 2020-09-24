@@ -1,11 +1,9 @@
 
+import numpy as np
 import pandas as pd
 
-def read_dsv(neadfile, **kw):
+def read_nead(neadfile, MKS=None, **kw):
 
-    CD_convert = {"space":'\s', "whitespace":'\s+', "tab":'\t'}
-    CD = None # shortcut for column delimiter, perhaps converted using above dictionary
-    
     with open(neadfile) as f:
         fmt = f.readline();
         assert(fmt[0] == "#")
@@ -18,43 +16,59 @@ def read_dsv(neadfile, **kw):
         line = ""
         attrs = {}
         attrs["__format__"] = fmt.split("#")[1].strip()
+
+        # default header values
+        # attrs["column_delimiter"] = ","
+        
         while True:
             line = f.readline()
-            assert(line[0] == "#")
+            assert((line[0] == "#") | (line[0] == '\n'))
             
-            if line == "# [DATA]\n": break
+            if line == "# [DATA]\n": break # done reading header
             
             key_eq_val = line.split("#")[1].strip()
             assert("=" in key_eq_val)
             key,val = [_.strip() for _ in key_eq_val.split("=")]
 
-            # The CD property is special. We need to convert
-            # from "space", "whitespace" or "tab" to regex string
-            # if the CD property is not a single character.
-            if key == "column_delimiter":
-                if len(val) > 1: assert(val in CD_convert.keys())
-                CD = val if val not in CD_convert.keys() else CD_convert[val]
-
-            # CD property must be defined before these properties
+            # column_delimiter (CD) property must be defined before these properties
             if key in ["fields", "units_offset", "units_multiplier"]:
                 assert("column_delimiter" in attrs.keys())
                 
             # If the CD property exists, use it to split any properties that contain it.
             if "column_delimiter" in attrs.keys():
-                val = val.split(CD) if CD not in CD_convert.values() else val.split()
+                CD = attrs['column_delimiter']
+                if CD in val:
+                    val = [_.strip() for _ in val.split(CD)]
+                    # convert to numeric if only contains numbers
+                    if all([str(s).strip('-').replace('.','').isdigit() for s in val]):
+                        val = np.array(val).astype(np.float)
 
             attrs[key] = val
     # done reading header
 
     df = pd.read_csv(neadfile,
                      comment = "#",
-                     sep = CD,
+                     sep = attrs['column_delimiter'],
                      names = attrs["fields"],
                      **kw)
+
+    # # convert to MKS by adding units_offset and units_multiplier to a
+    # # multi-header, selecting numeric columns, and converting.
+    if (MKS != False):
+        assert('units_offset' in attrs.keys())
+        assert('units_multiplier' in attrs.keys())
+        uo = attrs['units_offset']
+        um = attrs['units_multiplier']
+        df.columns = pd.MultiIndex.from_tuples(list(zip(df.columns, uo, um)), names=['name','uo','um'])
+        df_n = df.select_dtypes(include='number')
+        uo = df_n.columns.get_level_values('uo')
+        um = df_n.columns.get_level_values('um')
+        df_n = (df_n  * um) + uo
+        for c in df_n.columns: df[c] = df_n[c] # move back over
+        df.columns = df.columns.get_level_values('name')
+
     df.attrs = attrs
     return df
-
-
 
 # def write_dsv(df, filename=None, header=None):
 
