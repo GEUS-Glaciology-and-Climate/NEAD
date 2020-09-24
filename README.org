@@ -70,3 +70,27 @@ df.head()
 | 2010-06-22 13:00:00 |   3 | 60 | 2.4 |  340 |
 | 2010-06-22 14:00:00 | 2.8 | 56 |   2 |  330 |
 
+You can access the header properties in the =.attrs= dictionary.
+
+#+BEGIN_SRC jupyter-python :exports both
+import nead.nead_io as nead
+df = nead.read_nead("sample_csv.dsv", index_col=0, parse_dates=True, MKS=False)
+
+for k in df.attrs.keys():
+  print(k, '=', df.attrs[k])
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+__format__ = NEAD 1.0 UTF-8
+station_id = test_station
+latitude = 46.5
+longitude = 9.8
+altitude = 1500
+nodata = -999
+tz = +01
+column_delimiter = ,
+fields = ['timestamp', 'TA', 'RH', 'VW', 'ISWR']
+units_offset = [  0.   273.15   0.     0.     0.  ]
+units_multiplier = [1.   1.   0.01 1.   1.  ]
+#+end_example
