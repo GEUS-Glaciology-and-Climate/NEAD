@@ -22,11 +22,14 @@ def read_nead(neadfile, MKS=None, **kw):
         
         while True:
             line = f.readline()
-            assert((line[0] == "#") | (line[0] == '\n'))
+
+            if line[0] == "\n": continue   # handle blank line
+            assert(line[0] == "#")
             
             if line == "# [DATA]\n": break # done reading header
             
             key_eq_val = line.split("#")[1].strip()
+            if key_eq_val == "": continue # handle "#" or "# " or "#   #" lines
             assert("=" in key_eq_val)
             key,val = [_.strip() for _ in key_eq_val.split("=")]
 
