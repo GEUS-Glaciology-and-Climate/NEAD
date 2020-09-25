@@ -3,6 +3,7 @@
 
 * Table of contents                               :toc_3:noexport:
 - [[#citation][Citation]]
+  - [[#file-format][File format]]
 - [[#warning][WARNING]]
 - [[#installation][Installation]]
 - [[#usage][Usage]]
@@ -11,6 +12,9 @@
 
 Iosifescu Enescu, I., Bavay, M., Plattner, G.-K. (2020). Sharing and reusing meteorological data. WMO Data Conference 2020 - Earth System Data Exchange in the 21st Century (Virtual Conference).
 
+** File format
+
+The NEAD file format is described in [[https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form][EBNF]] syntax in [[./EBNF.org]] and graphically at https://raw.githubusercontent.com/GEUS-PROMICE/NEAD/main/NEAD.svg 
 * WARNING
 
 + This is alpha level software under development.
@@ -94,3 +98,4 @@ fields = ['timestamp', 'TA', 'RH', 'VW', 'ISWR']
 units_offset = [  0.   273.15   0.     0.     0.  ]
 units_multiplier = [1.   1.   0.01 1.   1.  ]
 #+end_example
+
