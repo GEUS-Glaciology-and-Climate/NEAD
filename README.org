@@ -44,13 +44,13 @@ pip install --upgrade git+https://github.com/mankoff/NEAD.git
 Read a NEAD file:
 
 #+NAME: nead-read-simple
-#+BEGIN_SRC jupyter-python :exports none
+#+BEGIN_SRC jupyter-python :exports code
 import nead.nead_io as nead
 df = nead.read_nead("sample_csv.dsv")
 df.head()
 #+END_SRC
 
-#+BEGIN_SRC jupyter-python 
+#+BEGIN_SRC jupyter-python :exports results
 import importlib
 importlib.reload(nead)
 <<nead-read-simple>>
@@ -68,13 +68,13 @@ importlib.reload(nead)
 Do not convert to MKS units and also pass arguments to the Pandas [[https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html][read_csv]] command:
 
 #+NAME: nead-read-complex
-#+BEGIN_SRC jupyter-python :exports none
+#+BEGIN_SRC jupyter-python :exports code
 import nead.nead_io as nead
 df = nead.read_nead("sample_csv.dsv", index_col=0, parse_dates=True, MKS=False)
 df.head()
 #+END_SRC
 
-#+BEGIN_SRC jupyter-python 
+#+BEGIN_SRC jupyter-python  :exports results
 import importlib
 importlib.reload(nead)
 <<nead-read-complex>>
