@@ -23,7 +23,11 @@ java -jar ~/local/rr/rr.war -suppressebnf ./NEAD.ebnf > NEAD.svg
 
 * File format: EBNF syntax
 
-The following EBNF syntax can be viewed graphically at https://raw.githubusercontent.com/GEUS-PROMICE/NEAD/main/NEAD.svg 
+Click on the example graphic below to see the full graphical representation of the EBNF.
+
+[[https://raw.githubusercontent.com/GEUS-PROMICE/NEAD/main/NEAD.svg][file:./fig/example.png]]
+
+The [[https://raw.githubusercontent.com/GEUS-PROMICE/NEAD/main/NEAD.svg][graphical EBNF form]] is generated from the following EBNF syntax:
 
 #+BEGIN_SRC ebnf :tangle NEAD.ebnf :exports code
 NEAD             ::= firstline headerstart headerlines datastart datalines
