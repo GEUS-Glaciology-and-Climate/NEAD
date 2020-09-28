@@ -1,0 +1,30 @@
+# NEAD 1.0 UTF-8
+# [HEADER]
+# station_id = 803027F4
+# station_name = GC-NET GOES station Summit Station
+# srid = EPSG:4326
+# geometry = POINTZ (38.5053 72.5794 3199)
+# nodata_value = -999
+# tz = 0
+# column_delimiter = ,
+# fields = timestamp,ISWR,OSWR,NSWR,TA1,TA2,RH1,RH2,VW1,VW2,DW1,DW2,P,HS1,HS2,V
+# units_offset = 0,0,0,0,273.15,273.15,0,0,0,0,0,0,0,0,0,0
+# units_multiplier = 1,1,1,1,1,1,0.01,0.01,1,1,1,1,100,1,1,1
+# display_units = time,W/m2,W/m2,W/m2,°C,°C,%,%,m/s,m/s,°,°,mbar,m,m,V
+# display_description = timestamp_iso,short_wave_incoming_radiation,short_wave_outgoing_radiation,net_radiation,air_temperature_1,air_temperature_2,relative_humidity_1,relative_humidity_2,wind_speed_1,wind_speed_2,wind_direction_1,wind_direction_2,atmospheric_pressure,snow_height_1,snow_height_2,battery_voltage
+# database_fields = timestamp_iso,swin,swout,netrad,airtemp1,airtemp2,rh1,rh2,windspeed1,windspeed2,winddir1,winddir2,pressure,sh1,sh2,battvolt
+# database_fields_data_types = timestamp,real,real,real,real,real,real,real,real,real,real,real,real,real,real,real
+# 
+# [DATA]
+# 
+1996-05-12 11:00:00+00,356.6,288.29,-999,-999,-999,96.05,94.79,3.84,4.2,186.5,-999,691.7,-999,0.05,4.59
+1996-05-12 12:00:00+00,489.3,453,-999,-999,-999,95.55,94.04,4.11,4.5,205.5,-999,691.8,-999,0.01,1.05
+1996-05-12 13:00:00+00,622,506.87,-15.43,-999,-999,91.01,90.89,3.39,3.58,165.3,-999,692,-999,0,0
+1996-05-12 14:00:00+00,684.2,569.11,15.51,-999,-999,87.46,88.67,5.36,5.61,217.6,-999,692.2,-0.01,-0.01,12.69
+1996-05-12 15:00:00+00,680.6,572.57,-90.87,-999,-999,86.25,87.5,6.82,7.13,222.3,-999,692.6,-0.01,-0.01,12.73
+1996-05-12 16:00:00+00,674.6,569.3,-137.32,-999,-999,87.05,87.38,5.51,5.77,219.6,-999,692.6,0,0,12.78
+1996-05-12 17:00:00+00,620.2,528.53,-157.64,-999,-999,88.73,89.67,5.78,6.06,220.9,-999,692.8,0,0.01,12.69
+1996-05-12 18:00:00+00,507.6,435.89,-117.4,-999,-999,90.03,91.31,5.84,6.12,221.3,-999,693.1,0,0.01,12.64
+1996-05-12 19:00:00+00,406.8,350.35,-61.34,-999,-999,91.13,92.28,5.83,6.1,229.2,-999,692.9,0,0.01,12.61
+1996-05-12 20:00:00+00,366.8,319.41,-77.03,-999,-999,91.24,92.4,7.06,7.37,240.2,-999,693,0,0,12.54
+1996-05-12 21:00:00+00,275.8,241.88,-92.72,-999,-999,92.66,93.76,4.87,5.16,237.9,-999,693,0,0,12.44
