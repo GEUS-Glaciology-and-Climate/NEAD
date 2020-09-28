@@ -77,7 +77,11 @@ def read_nead(neadfile, MKS=None, **kw):
         df_n = df.select_dtypes(include='number')
         uo = df_n.columns.get_level_values('uo')
         um = df_n.columns.get_level_values('um')
+
+        if(attrs['nodata_value']): df_n = df_n.replace(attrs['nodata_value'],np.nan)
         df_n = (df_n  * um) + uo
+        if(attrs['nodata_value']): df_n = df_n.replace(np.nan,attrs['nodata_value'])
+        
         for c in df_n.columns: df[c] = df_n[c] # move back over
         df.columns = df.columns.get_level_values('name')
 
