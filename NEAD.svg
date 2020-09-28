@@ -539,7 +539,7 @@
          <xhtml:ul>
             <xhtml:li><xhtml:a href="#headerlines" title="headerlines">headerlines</xhtml:a></xhtml:li>
          </xhtml:ul>
-      </xhtml:p><xhtml:br xmlns:xhtml="http://www.w3.org/1999/xhtml" /><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" style="font-size: 14px; font-weight:bold"><xhtml:a name="column_delimiter">column_delimiter:</xhtml:a></xhtml:p><svg xmlns="http://www.w3.org/2000/svg" width="127" height="169">
+      </xhtml:p><xhtml:br xmlns:xhtml="http://www.w3.org/1999/xhtml" /><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" style="font-size: 14px; font-weight:bold"><xhtml:a name="column_delimiter">column_delimiter:</xhtml:a></xhtml:p><svg xmlns="http://www.w3.org/2000/svg" width="127" height="257">
          <defs>
             <style type="text/css">
     @namespace "http://www.w3.org/2000/svg";
@@ -583,7 +583,13 @@
          <rect x="51" y="135" width="28" height="32" rx="10"></rect>
          <rect x="49" y="133" width="28" height="32" class="terminal" rx="10"></rect>
          <text class="terminal" x="59" y="153">/</text>
-         <svg:path xmlns:svg="http://www.w3.org/2000/svg" class="line" d="m17 17 h2 m20 0 h10 m24 0 h10 m0 0 h4 m-68 0 h20 m48 0 h20 m-88 0 q10 0 10 10 m68 0 q0 -10 10 -10 m-78 10 v24 m68 0 v-24 m-68 24 q0 10 10 10 m48 0 q10 0 10 -10 m-58 10 h10 m26 0 h10 m0 0 h2 m-58 -10 v20 m68 0 v-20 m-68 20 v24 m68 0 v-24 m-68 24 q0 10 10 10 m48 0 q10 0 10 -10 m-58 10 h10 m28 0 h10 m-58 -10 v20 m68 0 v-20 m-68 20 v24 m68 0 v-24 m-68 24 q0 10 10 10 m48 0 q10 0 10 -10 m-58 10 h10 m28 0 h10 m23 -132 h-3"></svg:path>
+         <rect x="51" y="179" width="24" height="32" rx="10"></rect>
+         <rect x="49" y="177" width="24" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="59" y="197">:</text>
+         <rect x="51" y="223" width="24" height="32" rx="10"></rect>
+         <rect x="49" y="221" width="24" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="59" y="241">;</text>
+         <svg:path xmlns:svg="http://www.w3.org/2000/svg" class="line" d="m17 17 h2 m20 0 h10 m24 0 h10 m0 0 h4 m-68 0 h20 m48 0 h20 m-88 0 q10 0 10 10 m68 0 q0 -10 10 -10 m-78 10 v24 m68 0 v-24 m-68 24 q0 10 10 10 m48 0 q10 0 10 -10 m-58 10 h10 m26 0 h10 m0 0 h2 m-58 -10 v20 m68 0 v-20 m-68 20 v24 m68 0 v-24 m-68 24 q0 10 10 10 m48 0 q10 0 10 -10 m-58 10 h10 m28 0 h10 m-58 -10 v20 m68 0 v-20 m-68 20 v24 m68 0 v-24 m-68 24 q0 10 10 10 m48 0 q10 0 10 -10 m-58 10 h10 m28 0 h10 m-58 -10 v20 m68 0 v-20 m-68 20 v24 m68 0 v-24 m-68 24 q0 10 10 10 m48 0 q10 0 10 -10 m-58 10 h10 m24 0 h10 m0 0 h4 m-58 -10 v20 m68 0 v-20 m-68 20 v24 m68 0 v-24 m-68 24 q0 10 10 10 m48 0 q10 0 10 -10 m-58 10 h10 m24 0 h10 m0 0 h4 m23 -220 h-3"></svg:path>
          <polygon points="117 17 125 13 125 21"></polygon>
          <polygon points="117 17 109 13 109 21"></polygon></svg><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml">referenced by:
          <xhtml:ul>
@@ -1210,7 +1216,52 @@
             <xhtml:li><xhtml:a href="#alphanumeric" title="alphanumeric">alphanumeric</xhtml:a></xhtml:li>
             <xhtml:li><xhtml:a href="#key" title="key">key</xhtml:a></xhtml:li>
          </xhtml:ul>
-      </xhtml:p><xhtml:br xmlns:xhtml="http://www.w3.org/1999/xhtml" /><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" style="font-size: 14px; font-weight:bold"><xhtml:a name="digit">digit:</xhtml:a></xhtml:p><svg xmlns="http://www.w3.org/2000/svg" width="161" height="53">
+      </xhtml:p><xhtml:br xmlns:xhtml="http://www.w3.org/1999/xhtml" /><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" style="font-size: 14px; font-weight:bold"><xhtml:a name="digit">digit:</xhtml:a></xhtml:p><svg xmlns="http://www.w3.org/2000/svg" width="121" height="37">
+         <defs>
+            <style type="text/css">
+    @namespace "http://www.w3.org/2000/svg";
+    .line                 {fill: none; stroke: #332900; stroke-width: 1;}
+    .bold-line            {stroke: #141000; shape-rendering: crispEdges; stroke-width: 2;}
+    .thin-line            {stroke: #1F1800; shape-rendering: crispEdges}
+    .filled               {fill: #332900; stroke: none;}
+    text.terminal         {font-family: Verdana, Sans-serif;
+                            font-size: 12px;
+                            fill: #141000;
+                            font-weight: bold;
+                          }
+    text.nonterminal      {font-family: Verdana, Sans-serif;
+                            font-size: 12px;
+                            fill: #1A1400;
+                            font-weight: normal;
+                          }
+    text.regexp           {font-family: Verdana, Sans-serif;
+                            font-size: 12px;
+                            fill: #1F1800;
+                            font-weight: normal;
+                          }
+    rect, circle, polygon {fill: #332900; stroke: #332900;}
+    rect.terminal         {fill: #FFDB4D; stroke: #332900; stroke-width: 1;}
+    rect.nonterminal      {fill: #FFEC9E; stroke: #332900; stroke-width: 1;}
+    rect.text             {fill: none; stroke: none;}
+    polygon.regexp        {fill: #FFF4C7; stroke: #332900; stroke-width: 1;}
+  </style>
+         </defs>
+         <polygon points="9 17 1 13 1 21"></polygon>
+         <polygon points="17 17 9 13 9 21"></polygon>
+         <polygon points="31 19 38 3 86 3 93 19 86 35 38 35"></polygon>
+         <polygon points="29 17 36 1 84 1 91 17 84 33 36 33" class="regexp"></polygon>
+         <text class="regexp" x="44" y="21">[0-9]</text>
+         <svg:path xmlns:svg="http://www.w3.org/2000/svg" class="line" d="m17 17 h2 m0 0 h10 m62 0 h10 m3 0 h-3"></svg:path>
+         <polygon points="111 17 119 13 119 21"></polygon>
+         <polygon points="111 17 103 13 103 21"></polygon></svg><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml">referenced by:
+         <xhtml:ul>
+            <xhtml:li><xhtml:a href="#alphanumeric" title="alphanumeric">alphanumeric</xhtml:a></xhtml:li>
+            <xhtml:li><xhtml:a href="#float" title="float">float</xhtml:a></xhtml:li>
+            <xhtml:li><xhtml:a href="#hex" title="hex">hex</xhtml:a></xhtml:li>
+            <xhtml:li><xhtml:a href="#integer" title="integer">integer</xhtml:a></xhtml:li>
+            <xhtml:li><xhtml:a href="#version_number" title="version_number">version_number</xhtml:a></xhtml:li>
+         </xhtml:ul>
+      </xhtml:p><xhtml:br xmlns:xhtml="http://www.w3.org/1999/xhtml" /><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" style="font-size: 14px; font-weight:bold"><xhtml:a name="integer">integer:</xhtml:a></xhtml:p><svg xmlns="http://www.w3.org/2000/svg" width="237" height="129">
          <defs>
             <style type="text/css">
     @namespace "http://www.w3.org/2000/svg";
@@ -1242,63 +1293,19 @@
          </defs>
          <polygon points="9 33 1 29 1 37"></polygon>
          <polygon points="17 33 9 29 9 37"></polygon>
-         <polygon points="51 35 58 19 106 19 113 35 106 51 58 51"></polygon>
-         <polygon points="49 33 56 17 104 17 111 33 104 49 56 49" class="regexp"></polygon>
-         <text class="regexp" x="64" y="37">[0-9]</text>
-         <svg:path xmlns:svg="http://www.w3.org/2000/svg" class="line" d="m17 33 h2 m20 0 h10 m62 0 h10 m-102 0 l20 0 m-1 0 q-9 0 -9 -10 l0 -12 q0 -10 10 -10 m82 32 l20 0 m-20 0 q10 0 10 -10 l0 -12 q0 -10 -10 -10 m-82 0 h10 m0 0 h72 m23 32 h-3"></svg:path>
-         <polygon points="151 33 159 29 159 37"></polygon>
-         <polygon points="151 33 143 29 143 37"></polygon></svg><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml">referenced by:
+         <rect x="51" y="51" width="30" height="32" rx="10"></rect>
+         <rect x="49" y="49" width="30" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="59" y="69">+</text>
+         <rect x="51" y="95" width="26" height="32" rx="10"></rect>
+         <rect x="49" y="93" width="26" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="59" y="113">-</text><a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#digit" xlink:title="digit">
+            <rect x="141" y="19" width="48" height="32"></rect>
+            <rect x="139" y="17" width="48" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="149" y="37">digit</text></a><svg:path xmlns:svg="http://www.w3.org/2000/svg" class="line" d="m17 33 h2 m20 0 h10 m0 0 h40 m-70 0 h20 m50 0 h20 m-90 0 q10 0 10 10 m70 0 q0 -10 10 -10 m-80 10 v12 m70 0 v-12 m-70 12 q0 10 10 10 m50 0 q10 0 10 -10 m-60 10 h10 m30 0 h10 m-60 -10 v20 m70 0 v-20 m-70 20 v24 m70 0 v-24 m-70 24 q0 10 10 10 m50 0 q10 0 10 -10 m-60 10 h10 m26 0 h10 m0 0 h4 m40 -76 h10 m48 0 h10 m-88 0 l20 0 m-1 0 q-9 0 -9 -10 l0 -12 q0 -10 10 -10 m68 32 l20 0 m-20 0 q10 0 10 -10 l0 -12 q0 -10 -10 -10 m-68 0 h10 m0 0 h58 m23 32 h-3"></svg:path>
+         <polygon points="227 33 235 29 235 37"></polygon>
+         <polygon points="227 33 219 29 219 37"></polygon></svg><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml">referenced by:
          <xhtml:ul>
-            <xhtml:li><xhtml:a href="#alphanumeric" title="alphanumeric">alphanumeric</xhtml:a></xhtml:li>
-            <xhtml:li><xhtml:a href="#integer" title="integer">integer</xhtml:a></xhtml:li>
-            <xhtml:li><xhtml:a href="#number" title="number">number</xhtml:a></xhtml:li>
-            <xhtml:li><xhtml:a href="#version_number" title="version_number">version_number</xhtml:a></xhtml:li>
-         </xhtml:ul>
-      </xhtml:p><xhtml:br xmlns:xhtml="http://www.w3.org/1999/xhtml" /><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" style="font-size: 14px; font-weight:bold"><xhtml:a name="integer">integer:</xhtml:a></xhtml:p><svg xmlns="http://www.w3.org/2000/svg" width="237" height="147">
-         <defs>
-            <style type="text/css">
-    @namespace "http://www.w3.org/2000/svg";
-    .line                 {fill: none; stroke: #332900; stroke-width: 1;}
-    .bold-line            {stroke: #141000; shape-rendering: crispEdges; stroke-width: 2;}
-    .thin-line            {stroke: #1F1800; shape-rendering: crispEdges}
-    .filled               {fill: #332900; stroke: none;}
-    text.terminal         {font-family: Verdana, Sans-serif;
-                            font-size: 12px;
-                            fill: #141000;
-                            font-weight: bold;
-                          }
-    text.nonterminal      {font-family: Verdana, Sans-serif;
-                            font-size: 12px;
-                            fill: #1A1400;
-                            font-weight: normal;
-                          }
-    text.regexp           {font-family: Verdana, Sans-serif;
-                            font-size: 12px;
-                            fill: #1F1800;
-                            font-weight: normal;
-                          }
-    rect, circle, polygon {fill: #332900; stroke: #332900;}
-    rect.terminal         {fill: #FFDB4D; stroke: #332900; stroke-width: 1;}
-    rect.nonterminal      {fill: #FFEC9E; stroke: #332900; stroke-width: 1;}
-    rect.text             {fill: none; stroke: none;}
-    polygon.regexp        {fill: #FFF4C7; stroke: #332900; stroke-width: 1;}
-  </style>
-         </defs>
-         <polygon points="9 51 1 47 1 55"></polygon>
-         <polygon points="17 51 9 47 9 55"></polygon>
-         <rect x="51" y="69" width="30" height="32" rx="10"></rect>
-         <rect x="49" y="67" width="30" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="59" y="87">+</text>
-         <rect x="51" y="113" width="26" height="32" rx="10"></rect>
-         <rect x="49" y="111" width="26" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="59" y="131">-</text><a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#digit" xlink:title="digit">
-            <rect x="141" y="3" width="48" height="32"></rect>
-            <rect x="139" y="1" width="48" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="149" y="21">digit</text></a><svg:path xmlns:svg="http://www.w3.org/2000/svg" class="line" d="m17 51 h2 m20 0 h10 m0 0 h40 m-70 0 h20 m50 0 h20 m-90 0 q10 0 10 10 m70 0 q0 -10 10 -10 m-80 10 v12 m70 0 v-12 m-70 12 q0 10 10 10 m50 0 q10 0 10 -10 m-60 10 h10 m30 0 h10 m-60 -10 v20 m70 0 v-20 m-70 20 v24 m70 0 v-24 m-70 24 q0 10 10 10 m50 0 q10 0 10 -10 m-60 10 h10 m26 0 h10 m0 0 h4 m40 -76 h10 m0 0 h58 m-88 0 l20 0 m-1 0 q-9 0 -9 -10 l0 -14 q0 -10 10 -10 m68 34 l20 0 m-20 0 q10 0 10 -10 l0 -14 q0 -10 -10 -10 m-68 0 h10 m48 0 h10 m23 34 h-3"></svg:path>
-         <polygon points="227 51 235 47 235 55"></polygon>
-         <polygon points="227 51 219 47 219 55"></polygon></svg><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml">referenced by:
-         <xhtml:ul>
-            <xhtml:li><xhtml:a href="#number" title="number">number</xhtml:a></xhtml:li>
+            <xhtml:li><xhtml:a href="#float" title="float">float</xhtml:a></xhtml:li>
          </xhtml:ul>
       </xhtml:p><xhtml:br xmlns:xhtml="http://www.w3.org/1999/xhtml" /><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" style="font-size: 14px; font-weight:bold"><xhtml:a name="alphanumeric">alphanumeric:</xhtml:a></xhtml:p><svg xmlns="http://www.w3.org/2000/svg" width="187" height="97">
          <defs>
@@ -1344,7 +1351,61 @@
             <xhtml:li><xhtml:a href="#key" title="key">key</xhtml:a></xhtml:li>
             <xhtml:li><xhtml:a href="#version_number" title="version_number">version_number</xhtml:a></xhtml:li>
          </xhtml:ul>
-      </xhtml:p><xhtml:br xmlns:xhtml="http://www.w3.org/1999/xhtml" /><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" style="font-size: 14px; font-weight:bold"><xhtml:a name="number">number:</xhtml:a></xhtml:p><svg xmlns="http://www.w3.org/2000/svg" width="395" height="119">
+      </xhtml:p><xhtml:br xmlns:xhtml="http://www.w3.org/1999/xhtml" /><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" style="font-size: 14px; font-weight:bold"><xhtml:a name="hex">hex:</xhtml:a></xhtml:p><svg xmlns="http://www.w3.org/2000/svg" width="187" height="317">
+         <defs>
+            <style type="text/css">
+    @namespace "http://www.w3.org/2000/svg";
+    .line                 {fill: none; stroke: #332900; stroke-width: 1;}
+    .bold-line            {stroke: #141000; shape-rendering: crispEdges; stroke-width: 2;}
+    .thin-line            {stroke: #1F1800; shape-rendering: crispEdges}
+    .filled               {fill: #332900; stroke: none;}
+    text.terminal         {font-family: Verdana, Sans-serif;
+                            font-size: 12px;
+                            fill: #141000;
+                            font-weight: bold;
+                          }
+    text.nonterminal      {font-family: Verdana, Sans-serif;
+                            font-size: 12px;
+                            fill: #1A1400;
+                            font-weight: normal;
+                          }
+    text.regexp           {font-family: Verdana, Sans-serif;
+                            font-size: 12px;
+                            fill: #1F1800;
+                            font-weight: normal;
+                          }
+    rect, circle, polygon {fill: #332900; stroke: #332900;}
+    rect.terminal         {fill: #FFDB4D; stroke: #332900; stroke-width: 1;}
+    rect.nonterminal      {fill: #FFEC9E; stroke: #332900; stroke-width: 1;}
+    rect.text             {fill: none; stroke: none;}
+    polygon.regexp        {fill: #FFF4C7; stroke: #332900; stroke-width: 1;}
+  </style>
+         </defs>
+         <polygon points="9 33 1 29 1 37"></polygon>
+         <polygon points="17 33 9 29 9 37"></polygon><a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#digit" xlink:title="digit">
+            <rect x="71" y="19" width="48" height="32"></rect>
+            <rect x="69" y="17" width="48" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="79" y="37">digit</text></a><rect x="71" y="63" width="28" height="32" rx="10"></rect>
+         <rect x="69" y="61" width="28" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="79" y="81">a</text>
+         <rect x="71" y="107" width="28" height="32" rx="10"></rect>
+         <rect x="69" y="105" width="28" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="79" y="125">b</text>
+         <rect x="71" y="151" width="26" height="32" rx="10"></rect>
+         <rect x="69" y="149" width="26" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="79" y="169">c</text>
+         <rect x="71" y="195" width="28" height="32" rx="10"></rect>
+         <rect x="69" y="193" width="28" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="79" y="213">d</text>
+         <rect x="71" y="239" width="28" height="32" rx="10"></rect>
+         <rect x="69" y="237" width="28" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="79" y="257">e</text>
+         <rect x="71" y="283" width="24" height="32" rx="10"></rect>
+         <rect x="69" y="281" width="24" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="79" y="301">f</text>
+         <svg:path xmlns:svg="http://www.w3.org/2000/svg" class="line" d="m17 33 h2 m40 0 h10 m48 0 h10 m-88 0 h20 m68 0 h20 m-108 0 q10 0 10 10 m88 0 q0 -10 10 -10 m-98 10 v24 m88 0 v-24 m-88 24 q0 10 10 10 m68 0 q10 0 10 -10 m-78 10 h10 m28 0 h10 m0 0 h20 m-78 -10 v20 m88 0 v-20 m-88 20 v24 m88 0 v-24 m-88 24 q0 10 10 10 m68 0 q10 0 10 -10 m-78 10 h10 m28 0 h10 m0 0 h20 m-78 -10 v20 m88 0 v-20 m-88 20 v24 m88 0 v-24 m-88 24 q0 10 10 10 m68 0 q10 0 10 -10 m-78 10 h10 m26 0 h10 m0 0 h22 m-78 -10 v20 m88 0 v-20 m-88 20 v24 m88 0 v-24 m-88 24 q0 10 10 10 m68 0 q10 0 10 -10 m-78 10 h10 m28 0 h10 m0 0 h20 m-78 -10 v20 m88 0 v-20 m-88 20 v24 m88 0 v-24 m-88 24 q0 10 10 10 m68 0 q10 0 10 -10 m-78 10 h10 m28 0 h10 m0 0 h20 m-78 -10 v20 m88 0 v-20 m-88 20 v24 m88 0 v-24 m-88 24 q0 10 10 10 m68 0 q10 0 10 -10 m-78 10 h10 m24 0 h10 m0 0 h24 m-108 -264 l20 0 m-1 0 q-9 0 -9 -10 l0 -12 q0 -10 10 -10 m108 32 l20 0 m-20 0 q10 0 10 -10 l0 -12 q0 -10 -10 -10 m-108 0 h10 m0 0 h98 m23 32 h-3"></svg:path>
+         <polygon points="177 33 185 29 185 37"></polygon>
+         <polygon points="177 33 169 29 169 37"></polygon></svg><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml">no references</xhtml:p><xhtml:br xmlns:xhtml="http://www.w3.org/1999/xhtml" /><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" style="font-size: 14px; font-weight:bold"><xhtml:a name="float">float:</xhtml:a></xhtml:p><svg xmlns="http://www.w3.org/2000/svg" width="275" height="71">
          <defs>
             <style type="text/css">
     @namespace "http://www.w3.org/2000/svg";
@@ -1376,16 +1437,16 @@
          </defs>
          <polygon points="9 51 1 47 1 55"></polygon>
          <polygon points="17 51 9 47 9 55"></polygon><a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#integer" xlink:title="integer">
-            <rect x="51" y="3" width="64" height="32"></rect>
-            <rect x="49" y="1" width="64" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="59" y="21">integer</text></a><rect x="195" y="69" width="24" height="32" rx="10"></rect>
-         <rect x="193" y="67" width="24" height="32" class="terminal" rx="10"></rect>
-         <text class="terminal" x="203" y="87">.</text><a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#digit" xlink:title="digit">
-            <rect x="279" y="37" width="48" height="32"></rect>
-            <rect x="277" y="35" width="48" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="287" y="55">digit</text></a><svg:path xmlns:svg="http://www.w3.org/2000/svg" class="line" d="m17 51 h2 m20 0 h10 m0 0 h74 m-104 0 l20 0 m-1 0 q-9 0 -9 -10 l0 -14 q0 -10 10 -10 m84 34 l20 0 m-20 0 q10 0 10 -10 l0 -14 q0 -10 -10 -10 m-84 0 h10 m64 0 h10 m60 34 h10 m0 0 h34 m-64 0 h20 m44 0 h20 m-84 0 q10 0 10 10 m64 0 q0 -10 10 -10 m-74 10 v12 m64 0 v-12 m-64 12 q0 10 10 10 m44 0 q10 0 10 -10 m-54 10 h10 m24 0 h10 m40 -32 h10 m48 0 h10 m-88 0 l20 0 m-1 0 q-9 0 -9 -10 l0 -12 q0 -10 10 -10 m68 32 l20 0 m-20 0 q10 0 10 -10 l0 -12 q0 -10 -10 -10 m-68 0 h10 m0 0 h58 m-192 32 h20 m192 0 h20 m-232 0 q10 0 10 10 m212 0 q0 -10 10 -10 m-222 10 v46 m212 0 v-46 m-212 46 q0 10 10 10 m192 0 q10 0 10 -10 m-202 10 h10 m0 0 h182 m23 -66 h-3"></svg:path>
-         <polygon points="385 51 393 47 393 55"></polygon>
-         <polygon points="385 51 377 47 377 55"></polygon></svg><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml">no references</xhtml:p><xhtml:br xmlns:xhtml="http://www.w3.org/1999/xhtml" /><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" style="font-size: 14px; font-weight:bold"><xhtml:a name="unicode-char">unicode-char:</xhtml:a></xhtml:p><svg xmlns="http://www.w3.org/2000/svg" width="263" height="257">
+            <rect x="31" y="37" width="64" height="32"></rect>
+            <rect x="29" y="35" width="64" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="39" y="55">integer</text></a><rect x="115" y="37" width="24" height="32" rx="10"></rect>
+         <rect x="113" y="35" width="24" height="32" class="terminal" rx="10"></rect>
+         <text class="terminal" x="123" y="55">.</text><a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#digit" xlink:title="digit">
+            <rect x="179" y="3" width="48" height="32"></rect>
+            <rect x="177" y="1" width="48" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="187" y="21">digit</text></a><svg:path xmlns:svg="http://www.w3.org/2000/svg" class="line" d="m17 51 h2 m0 0 h10 m64 0 h10 m0 0 h10 m24 0 h10 m20 0 h10 m0 0 h58 m-88 0 l20 0 m-1 0 q-9 0 -9 -10 l0 -14 q0 -10 10 -10 m68 34 l20 0 m-20 0 q10 0 10 -10 l0 -14 q0 -10 -10 -10 m-68 0 h10 m48 0 h10 m23 34 h-3"></svg:path>
+         <polygon points="265 51 273 47 273 55"></polygon>
+         <polygon points="265 51 257 47 257 55"></polygon></svg><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml">no references</xhtml:p><xhtml:br xmlns:xhtml="http://www.w3.org/1999/xhtml" /><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" style="font-size: 14px; font-weight:bold"><xhtml:a name="unicode-char">unicode-char:</xhtml:a></xhtml:p><svg xmlns="http://www.w3.org/2000/svg" width="263" height="257">
          <defs>
             <style type="text/css">
     @namespace "http://www.w3.org/2000/svg";

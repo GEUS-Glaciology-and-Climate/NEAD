@@ -58,10 +58,11 @@ newline         ::= #x0A
 tab             ::= #x9
 space           ::= #x20
 char            ::= [A-Za-z]
-digit           ::= [0-9]+
-integer         ::= [+-]? digit*
+digit           ::= [0-9]
+integer         ::= [+-]? digit+
 alphanumeric    ::= (digit | char)+
-number          ::= integer* ('.'? (digit)+)?
+hex             ::= (digit | [abcdef])+
+float           ::= integer '.' ((digit)+)?
 
 /* https://www.w3.org/TR/xml/#NT-Char */
 /* any Unicode character, excluding the surrogate blocks, FFFE, and FFFF. */
