@@ -38,7 +38,7 @@ headerlines      ::= ( ( linestart ( comment | required_header | recommended_hea
 linestart        ::= '#' whitespace
 required_header  ::= ('column_delimiter' whitespace '=' whitespace column_delimiter) | ('fields' whitespace '=' whitespace values)
 /* column_delimiter ::= (char|symbol) */
-column_delimiter ::= [,|\/]
+column_delimiter ::= [,|\/:;]
 
 
 recommended_header ::= (( 'station_id' | 'nodata_value' | 'srid' | 'geometry' | 'tz') whitespace '=' whitespace value) | ( 'units_offset' | 'units_multiplier' | 'display_units' ) whitespace '=' whitespace values
