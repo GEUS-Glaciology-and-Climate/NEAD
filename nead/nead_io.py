@@ -17,9 +17,6 @@ def read_nead(neadfile, MKS=None, **kw):
         attrs = {}
         attrs["__format__"] = fmt.split("#")[1].strip()
 
-        # default header values
-        # attrs["column_delimiter"] = ","
-        
         while True:
             line = f.readline()
 
@@ -33,26 +30,40 @@ def read_nead(neadfile, MKS=None, **kw):
             assert("=" in key_eq_val)
             key,val = [_.strip() for _ in key_eq_val.split("=")]
 
-            # column_delimiter (CD) property must be defined before these properties
-            if key in ["fields", "units_offset", "units_multiplier"]:
-                assert("column_delimiter" in attrs.keys())
-                
-            # If the CD property exists, use it to split any properties that contain it.
-            if "column_delimiter" in attrs.keys():
-                CD = attrs['column_delimiter']
-                if CD in val:
-                    val = [_.strip() for _ in val.split(CD)]
-                    # convert to numeric if only contains numbers
-                    if all([str(s).strip('-').replace('.','').isdigit() for s in val]):
-                        val = np.array(val).astype(np.float)
-
+            if val.strip('-').strip('+').replace('.','').isdigit():
+                val = np.float(val)
+                if val == np.int(val):
+                    val = np.int(val)
+            
             attrs[key] = val
-    # done reading header
+        # done reading header
+
+        ## split everything on the column delimiter (CD) that uses or appears to use the CD.
+        assert("column_delimiter" in attrs.keys())
+        CD = attrs["column_delimiter"]
+
+        # first split the fields field.
+        assert("fields" in attrs.keys())
+        nfields = len(attrs['fields'].split(CD))
+
+        # Now split all other fields that contain CD and the same number of CD as fields
+        for key in attrs.keys():
+            if type(attrs[key]) is not str:
+                continue
+            if (CD in attrs[key]) & (len(attrs[key].split(CD)) == nfields):
+                attrs[key] = [_.strip() for _ in attrs[key].split(CD)]
+                # convert to numeric if only contains numbers
+                if all([str(s).strip('-').strip('+').replace('.','').isdigit() for s in attrs[key]]):
+                    attrs[key] = np.array(attrs[key]).astype(np.float)
+                    if all(attrs[key] == attrs[key].astype(np.int)):
+                        attrs[key] = attrs[key].astype(np.int)
+                else:
+                    attrs[key] = np.array(attrs[key])
 
     df = pd.read_csv(neadfile,
                      comment = "#",
                      sep = attrs['column_delimiter'],
-                     names = attrs["fields"],
+                     names = attrs['fields'],
                      **kw)
 
     # # convert to MKS by adding units_offset and units_multiplier to a
