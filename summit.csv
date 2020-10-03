@@ -6,7 +6,7 @@
 # geometry = POINTZ (38.5053 72.5794 3199)
 # nodata_value = -999
 # tz = 0
-# column_delimiter = ,
+# field_delimiter = ,
 # fields = timestamp,ISWR,OSWR,NSWR,TA1,TA2,RH1,RH2,VW1,VW2,DW1,DW2,P,HS1,HS2,V
 # units_offset = 0,0,0,0,273.15,273.15,0,0,0,0,0,0,0,0,0,0
 # units_multiplier = 1,1,1,1,1,1,0.01,0.01,1,1,1,1,100,1,1,1

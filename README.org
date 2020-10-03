@@ -42,9 +42,9 @@ headerstart      ::= '#' ' ' '[HEADER]' newline
 
 headerlines      ::= ( ( linestart ( comment | required_header | recommended_header | other_header )? )? newline )+
 linestart        ::= '#' whitespace
-required_header  ::= ('column_delimiter' whitespace '=' whitespace column_delimiter) |
+required_header  ::= ('field_delimiter' whitespace '=' whitespace field_delimiter) |
                      ('fields' whitespace '=' whitespace values)
-column_delimiter ::= [,|\/:;]
+field_delimiter  ::= [,|\/:;]
 
 
 recommended_header ::= (( 'station_id' | 'nodata_value' | 'srid' | 'geometry' | 'tz') whitespace '=' whitespace value) |
@@ -53,10 +53,10 @@ recommended_header ::= (( 'station_id' | 'nodata_value' | 'srid' | 'geometry' | 
 other_header    ::= key whitespace '=' whitespace values
 key             ::= char (alphanumeric*)?
 value           ::= unicode-char*
-values          ::= value ( column_delimiter value )*
+values          ::= value ( field_delimiter value )*
 
 datastart       ::= '#' ' ' '[DATA]' newline
-datalines       ::= value ( column_delimiter value )*
+datalines       ::= value ( field_delimiter value )*
 
 whitespace      ::= (tab | space)+
 comment         ::= '#' whitespace? (unicode-char)?
@@ -102,7 +102,7 @@ cat summit.csv
 # geometry = POINTZ (38.5053 72.5794 3199)
 # nodata_value = -999
 # tz = 0
-# column_delimiter = ,
+# field_delimiter = ,
 # fields = timestamp,ISWR,OSWR,NSWR,TA1,TA2,RH1,RH2,VW1,VW2,DW1,DW2,P,HS1,HS2,V
 # add_value = 0,0,0,0,273.15,273.15,0,0,0,0,0,0,0,0,0,0
 # scale_factor = 1,1,1,1,1,1,0.01,0.01,1,1,1,1,100,1,1,1
