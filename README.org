@@ -47,7 +47,7 @@ required_header  ::= ('field_delimiter' whitespace '=' whitespace field_delimite
 field_delimiter  ::= [,|\/:;]
 
 
-recommended_header ::= (( 'station_id' | 'nodata_value' | 'srid' | 'geometry' | 'tz') whitespace '=' whitespace value) |
+recommended_header ::= (( 'station_id' | 'nodata' | 'srid' | 'geometry' | 'tz') whitespace '=' whitespace value) |
                        ( 'add_value' | 'scale_factor' | 'display_units' ) whitespace '=' whitespace values
 
 other_header    ::= key whitespace '=' whitespace values
@@ -100,7 +100,7 @@ cat summit.csv
 # station_name = GC-NET GOES station Summit Station
 # srid = EPSG:4326
 # geometry = POINTZ (38.5053 72.5794 3199)
-# nodata_value = -999
+# nodata = -999
 # tz = 0
 # field_delimiter = ,
 # fields = timestamp,ISWR,OSWR,NSWR,TA1,TA2,RH1,RH2,VW1,VW2,DW1,DW2,P,HS1,HS2,V
