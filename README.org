@@ -42,18 +42,32 @@ header_section        ::= metadata_header metadata_section fields_header fields_
 
 /* metadata */
 metadata_header       ::= '#' ' ' '[METADATA]' newline
-metadata_section      ::= (('#' ((whitespace (required_metadata | recommended_metadata | other_metadata))? )? lineend ) | newline)+
+metadata_section      ::= (('#' ((whitespace (required_metadata |
+                                              recommended_metadata |
+                                              other_metadata))? )? lineend ) | newline)+
 required_metadata     ::= ('field_delimiter' assignment field_delimiter) |
                           ('geometry' assignment geometry) |
                           ('srid' assignment EPSG_code)
-recommended_metadata  ::= ('station_id' assignment alphanumeric) | ('nodata' | 'tz' ) assignment (integer | float) | (( 'comment' | 'institution' | 'source' | 'references' | 'contact') assignment values)
+recommended_metadata  ::= ('station_id' assignment alphanumeric) |
+                          ('nodata' | 'tz' ) assignment (integer | float) |
+                          (( 'comment' |
+                             'institution' |
+                             'source' |
+                             'references' |
+                             'contact') assignment values)
 other_metadata        ::= key assignment value
 
 /* fields */
 fields_header         ::= '#' ' ' '[FIELDS]' newline
-fields_section        ::= (('#' ((whitespace ( required_fields | recommended_fields | other_fields ))? )? lineend ) | newline)+
+fields_section        ::= (('#' ((whitespace ( required_fields |
+                                               recommended_fields |
+                                               other_fields ))? )? lineend ) | newline)+
 required_fields       ::= ('fields' assignment values)
-recommended_fields    ::= ('scale_factor' | 'add_offset' | 'units' | 'long_name' | 'standard_name') assignment values
+recommended_fields    ::= ('scale_factor' |
+                           'add_offset' |
+                           'units' |
+                           'long_name' |
+                           'standard_name') assignment values
 other_fields          ::= key assignment values
 
 /* data */
@@ -76,7 +90,10 @@ field_delimiter ::= [,|\/:;]
 version_number  ::= digit* ('.' (alphanumeric)+)? ('.' (alphanumeric)+)?
 file_format     ::= 'UTF-8' | 'ASCII'
 EPSG_code       ::= 'EPSG' ':' digit digit digit digit
-geometry        ::= 'POINT(' float float ')' | 'POINTZ(' float float float ')' | WKT_string | column_name
+geometry        ::= 'POINT(' float float ')' |
+                    'POINTZ(' float float float ')' |
+                    WKT_string |
+                    column_name
 
 /* generic */
 whitespace      ::= (tab | space)+
