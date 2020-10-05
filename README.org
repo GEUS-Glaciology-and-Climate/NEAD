@@ -35,33 +35,54 @@ Click on the example graphic below to see the full graphical representation of t
 
 The [[https://raw.githubusercontent.com/GEUS-PROMICE/NEAD/main/NEAD.svg][graphical EBNF form]] is generated from the following EBNF syntax (from https://www.w3.org/TR/xml/#sec-notation):
 
-#+BEGIN_SRC ebnf :tangle NEAD.ebnf :exports code
-NEAD             ::= firstline headerstart headerlines datastart datalines
-firstline        ::= '#' ' ' 'NEAD' ' ' version_number ' ' file_format newline
-headerstart      ::= '#' ' ' '[HEADER]' newline
+#+BEGIN_SRC example :tangle NEAD.ebnf :exports code
+NEAD                  ::= firstline header_section data_section
+firstline             ::= '#' ' ' 'NEAD' ' ' version_number ' ' file_format newline
+header_section        ::= metadata_header metadata_section fields_header fields_section
 
-headerlines      ::= ( ( linestart ( comment | required_header | recommended_header | other_header )? )? newline )+
-linestart        ::= '#' whitespace
-required_header  ::= ('field_delimiter' whitespace '=' whitespace field_delimiter) |
-                     ('fields' whitespace '=' whitespace values)
-field_delimiter  ::= [,|\/:;]
+/* metadata */
+metadata_header       ::= '#' ' ' '[METADATA]' newline
+metadata_section      ::= (('#' ((whitespace (required_metadata | recommended_metadata | other_metadata))? )? lineend ) | newline)+
+required_metadata     ::= ('field_delimiter' assignment field_delimiter) |
+                          ('geometry' assignment geometry) |
+                          ('srid' assignment EPSG_code)
+recommended_metadata  ::= ('station_id' assignment alphanumeric) | ('nodata' | 'tz' ) assignment (integer | float) | (( 'comment' | 'institution' | 'source' | 'references' | 'contact') assignment values)
+other_metadata        ::= key assignment value
+
+/* fields */
+fields_header         ::= '#' ' ' '[FIELDS]' newline
+fields_section        ::= (('#' ((whitespace ( required_fields | recommended_fields | other_fields ))? )? lineend ) | newline)+
+required_fields       ::= ('fields' assignment values)
+recommended_fields    ::= ('scale_factor' | 'add_offset' | 'units' | 'long_name' | 'standard_name') assignment values
+other_fields          ::= key assignment values
+
+/* data */
+data_section          ::= '#' ' ' '[DATA]' newline dataline+
+dataline              ::= (value ( field_delimiter value )* newline)
+values                ::= value ( field_delimiter value )*
+
+/*
+  NOTE:
+  All values must be the same length.
+  This means everything in the "[FIELDS]" section maps 1:1 to the columns in the "[DATA]" section.
+*/
 
 
-recommended_header ::= (( 'station_id' | 'nodata' | 'srid' | 'geometry' | 'tz') whitespace '=' whitespace value) |
-                       ( 'add_value' | 'scale_factor' | 'display_units' ) whitespace '=' whitespace values
-
-other_header    ::= key whitespace '=' whitespace values
+/* other */
 key             ::= char (alphanumeric*)?
 value           ::= unicode-char*
-values          ::= value ( field_delimiter value )*
+assignment      ::= whitespace '=' whitespace
+field_delimiter ::= [,|\/:;]
+version_number  ::= digit* ('.' (alphanumeric)+)? ('.' (alphanumeric)+)?
+file_format     ::= 'UTF-8' | 'ASCII'
+EPSG_code       ::= 'EPSG' ':' digit digit digit digit
+geometry        ::= 'POINT(' float float ')' | 'POINTZ(' float float float ')' | WKT_string | column_name
 
-datastart       ::= '#' ' ' '[DATA]' newline
-datalines       ::= value ( field_delimiter value )*
-
+/* generic */
 whitespace      ::= (tab | space)+
 comment         ::= '#' whitespace? (unicode-char)?
+lineend         ::= (whitespace | comment)? newline
 newline         ::= #x0A
-
 tab             ::= #x9
 space           ::= #x20
 char            ::= [a-zA-Z]
@@ -73,11 +94,14 @@ float           ::= integer '.' ((digit)+)?
 
 /* any Unicode character, excluding the surrogate blocks, FFFE, and FFFF. */
 unicode-char    ::= #x9 | #xA | #xD | [#x20-#xD7FF] | [#xE000-#xFFFD] | [#x10000-#x10FFFF]
-
-
-version_number  ::= digit* ('.' (alphanumeric)+)? ('.' (alphanumeric)+)?
-file_format     ::= 'UTF-8' | 'ASCII'
 #+END_SRC
+
+#+BEGIN_SRC bash :exports none
+java -jar ~/local/rr/rr.war -suppressebnf ./NEAD.ebnf > NEAD.svg
+# firefox ./NEAD.svg
+#+END_SRC
+
+#+RESULTS:
 
 
 * Interfaces
@@ -95,7 +119,7 @@ cat summit.csv
 #+RESULTS:
 #+begin_example
 # NEAD 1.0 UTF-8
-# [HEADER]
+# [METADATA]
 # station_id = 803027F4
 # station_name = GC-NET GOES station Summit Station
 # srid = EPSG:4326
@@ -103,6 +127,7 @@ cat summit.csv
 # nodata = -999
 # tz = 0
 # field_delimiter = ,
+# [FIELDS]
 # fields = timestamp,ISWR,OSWR,NSWR,TA1,TA2,RH1,RH2,VW1,VW2,DW1,DW2,P,HS1,HS2,V
 # add_value = 0,0,0,0,273.15,273.15,0,0,0,0,0,0,0,0,0,0
 # scale_factor = 1,1,1,1,1,1,0.01,0.01,1,1,1,1,100,1,1,1
