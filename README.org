@@ -48,13 +48,14 @@ metadata_section      ::= (('#' ((whitespace (required_metadata |
 required_metadata     ::= ('field_delimiter' assignment field_delimiter) |
                           ('geometry' assignment geometry) |
                           ('srid' assignment EPSG_code)
-recommended_metadata  ::= ('station_id' assignment alphanumeric) |
-                          ('nodata' | 'tz' ) assignment (integer | float) |
-                          (( 'comment' |
-                             'institution' |
-                             'source' |
-                             'references' |
-                             'contact') assignment values)
+recommended_metadata  ::= ('station_id' assignment alphanumeric)
+recommended_metadata  ::= ('timestamp_meaning' assignment timestamp_meanings)
+recommended_metadata  ::= ('nodata' | 'tz' ) assignment (integer | float)
+recommended_metadata  ::= ('comment' |
+                           'institution' |
+                           'source' |
+                           'references' |
+                           'contact') assignment value
 other_metadata        ::= key assignment value
 
 /* fields */
@@ -68,6 +69,7 @@ recommended_fields    ::= ('scale_factor' |
                            'units' |
                            'long_name' |
                            'standard_name') assignment values
+recommended_fields    ::= 'timestamp_meaning' assignment timestamp_meanings
 other_fields          ::= key assignment values
 
 /* data */
@@ -94,6 +96,7 @@ geometry        ::= 'POINT(' float float ')' |
                     'POINTZ(' float float float ')' |
                     WKT_string |
                     column_name
+timestamp_meanings ::= 'beginning' | 'end' | 'middle' | 'instantaneous' | 'other' | 'undefined'
 
 /* generic */
 whitespace      ::= (tab | space)+
