@@ -51,11 +51,7 @@ required_metadata     ::= ('field_delimiter' assignment field_delimiter) |
 recommended_metadata  ::= ('station_id' assignment alphanumeric)
 recommended_metadata  ::= ('timestamp_meaning' assignment timestamp_meanings)
 recommended_metadata  ::= ('nodata' | 'timezone' ) assignment (integer | float)
-recommended_metadata  ::= ('comment' |
-                           'institution' |
-                           'source' |
-                           'references' |
-                           'contact') assignment value
+recommended_metadata  ::= ('doi' | 'reference') assignment value
 other_metadata        ::= key assignment value
 
 /* fields */
