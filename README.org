@@ -72,7 +72,7 @@ other_fields          ::= key assignment values
 /* data */
 data_section          ::= '#' ' ' '[DATA]' newline dataline+
 dataline              ::= (value ( field_delimiter value )* newline)
-values                ::= value ( field_delimiter value )*
+values                ::= value ( field_delimiter whitespace value )*
 
 /*
   NOTE:
@@ -115,7 +115,7 @@ unicode-char    ::= #x9 | #xA | #xD | [#x20-#xD7FF] | [#xE000-#xFFFD] | [#x10000
 
 #+BEGIN_SRC bash :exports none
 java -jar ~/local/rr/rr.war -suppressebnf ./NEAD.ebnf > NEAD.svg
-# firefox ./NEAD.svg
+firefox --new-window ./NEAD.svg
 #+END_SRC
 
 #+RESULTS:

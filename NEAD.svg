@@ -1039,7 +1039,7 @@
          <xhtml:ul>
             <xhtml:li><xhtml:a href="#data_section" title="data_section">data_section</xhtml:a></xhtml:li>
          </xhtml:ul>
-      </xhtml:p><xhtml:br xmlns:xhtml="http://www.w3.org/1999/xhtml" /><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" style="font-size: 14px; font-weight:bold"><xhtml:a name="values">values:</xhtml:a></xhtml:p><svg xmlns="http://www.w3.org/2000/svg" width="209" height="81">
+      </xhtml:p><xhtml:br xmlns:xhtml="http://www.w3.org/1999/xhtml" /><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" style="font-size: 14px; font-weight:bold"><xhtml:a name="values">values:</xhtml:a></xhtml:p><svg xmlns="http://www.w3.org/2000/svg" width="319" height="81">
          <defs>
             <style type="text/css">
     @namespace "http://www.w3.org/2000/svg";
@@ -1073,12 +1073,15 @@
          <polygon points="17 61 9 57 9 65"></polygon><a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#value" xlink:title="value">
             <rect x="51" y="47" width="54" height="32"></rect>
             <rect x="49" y="45" width="54" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="59" y="65">value</text></a><a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#field_delimiter" xlink:title="field_delimiter">
-            <rect x="51" y="3" width="110" height="32"></rect>
-            <rect x="49" y="1" width="110" height="32" class="nonterminal"></rect>
-            <text class="nonterminal" x="59" y="21">field_delimiter</text></a><svg:path xmlns:svg="http://www.w3.org/2000/svg" class="line" d="m17 61 h2 m20 0 h10 m54 0 h10 m0 0 h56 m-150 0 l20 0 m-1 0 q-9 0 -9 -10 l0 -24 q0 -10 10 -10 m130 44 l20 0 m-20 0 q10 0 10 -10 l0 -24 q0 -10 -10 -10 m-130 0 h10 m110 0 h10 m23 44 h-3"></svg:path>
-         <polygon points="199 61 207 57 207 65"></polygon>
-         <polygon points="199 61 191 57 191 65"></polygon></svg><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml">referenced by:
+            <text class="nonterminal" x="59" y="65">value</text></a><a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#whitespace" xlink:title="whitespace">
+            <rect x="51" y="3" width="90" height="32"></rect>
+            <rect x="49" y="1" width="90" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="59" y="21">whitespace</text></a><a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#field_delimiter" xlink:title="field_delimiter">
+            <rect x="161" y="3" width="110" height="32"></rect>
+            <rect x="159" y="1" width="110" height="32" class="nonterminal"></rect>
+            <text class="nonterminal" x="169" y="21">field_delimiter</text></a><svg:path xmlns:svg="http://www.w3.org/2000/svg" class="line" d="m17 61 h2 m20 0 h10 m54 0 h10 m0 0 h166 m-260 0 l20 0 m-1 0 q-9 0 -9 -10 l0 -24 q0 -10 10 -10 m240 44 l20 0 m-20 0 q10 0 10 -10 l0 -24 q0 -10 -10 -10 m-240 0 h10 m90 0 h10 m0 0 h10 m110 0 h10 m23 44 h-3"></svg:path>
+         <polygon points="309 61 317 57 317 65"></polygon>
+         <polygon points="309 61 301 57 301 65"></polygon></svg><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml">referenced by:
          <xhtml:ul>
             <xhtml:li><xhtml:a href="#other_fields" title="other_fields">other_fields</xhtml:a></xhtml:li>
             <xhtml:li><xhtml:a href="#recommended_fields" title="recommended_fields">recommended_fields</xhtml:a></xhtml:li>
@@ -1591,6 +1594,7 @@
             <xhtml:li><xhtml:a href="#fields_section" title="fields_section">fields_section</xhtml:a></xhtml:li>
             <xhtml:li><xhtml:a href="#lineend" title="lineend">lineend</xhtml:a></xhtml:li>
             <xhtml:li><xhtml:a href="#metadata_section" title="metadata_section">metadata_section</xhtml:a></xhtml:li>
+            <xhtml:li><xhtml:a href="#values" title="values">values</xhtml:a></xhtml:li>
          </xhtml:ul>
       </xhtml:p><xhtml:br xmlns:xhtml="http://www.w3.org/1999/xhtml" /><xhtml:p xmlns:xhtml="http://www.w3.org/1999/xhtml" style="font-size: 14px; font-weight:bold"><xhtml:a name="comment">comment:</xhtml:a></xhtml:p><svg xmlns="http://www.w3.org/2000/svg" width="401" height="69">
          <defs>
