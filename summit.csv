@@ -5,14 +5,14 @@
 # srid = EPSG:4326
 # geometry = POINTZ (38.5053 72.5794 3199)
 # nodata   = -999
-# tz = 0
+# timezone = 0
 # field_delimiter = ,
 # [FIELDS]
 # fields = timestamp,ISWR,OSWR,NSWR,TA1,TA2,RH1,RH2,VW1,VW2,DW1,DW2,P,HS1,HS2,V
-# units_offset = 0,0,0,0,273.15,273.15,0,0,0,0,0,0,0,0,0,0
-# units_multiplier = 1,1,1,1,1,1,0.01,0.01,1,1,1,1,100,1,1,1
-# display_units = time,W/m2,W/m2,W/m2,°C,°C,%,%,m/s,m/s,°,°,mbar,m,m,V
-# display_description = timestamp_iso,short_wave_incoming_radiation,short_wave_outgoing_radiation,net_radiation,air_temperature_1,air_temperature_2,relative_humidity_1,relative_humidity_2,wind_speed_1,wind_speed_2,wind_direction_1,wind_direction_2,atmospheric_pressure,snow_height_1,snow_height_2,battery_voltage
+# add_offset    = 0,0,0,0,273.15,273.15,0,0,0,0,0,0,0,0,0,0
+# scale_factor  = 1,1,1,1,1,1,0.01,0.01,1,1,1,1,100,1,1,1
+# units         = time,W/m2,W/m2,W/m2,°C,°C,%,%,m/s,m/s,°,°,mbar,m,m,V
+# standard_name = timestamp_iso,short_wave_incoming_radiation,short_wave_outgoing_radiation,net_radiation,air_temperature_1,air_temperature_2,relative_humidity_1,relative_humidity_2,wind_speed_1,wind_speed_2,wind_direction_1,wind_direction_2,atmospheric_pressure,snow_height_1,snow_height_2,battery_voltage
 # database_fields = timestamp_iso,swin,swout,netrad,airtemp1,airtemp2,rh1,rh2,windspeed1,windspeed2,winddir1,winddir2,pressure,sh1,sh2,battvolt
 # database_fields_data_types = timestamp,real,real,real,real,real,real,real,real,real,real,real,real,real,real,real
 # 
