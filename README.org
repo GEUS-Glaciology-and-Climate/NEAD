@@ -87,7 +87,7 @@ values                ::= value ( field_delimiter value )*
 /* other */
 key             ::= char (alphanumeric*)?
 value           ::= unicode-char*
-assignment      ::= whitespace '=' whitespace
+assignment      ::= whitespace? '=' whitespace?
 field_delimiter ::= [,|\/:;]
 version_number  ::= digit* ('.' (alphanumeric)+)? ('.' (alphanumeric)+)?
 file_format     ::= 'UTF-8' | 'ASCII'
