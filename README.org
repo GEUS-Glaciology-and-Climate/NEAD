@@ -50,7 +50,8 @@ required_metadata     ::= ('field_delimiter' assignment field_delimiter) |
                           ('srid' assignment EPSG_code)
 recommended_metadata  ::= ('station_id' assignment alphanumeric)
 recommended_metadata  ::= ('timestamp_meaning' assignment timestamp_meanings)
-recommended_metadata  ::= ('nodata' | 'timezone' ) assignment (integer | float)
+recommended_metadata  ::= 'nodata' assignment (integer | float)
+recommended_metadata  ::= 'timezone' assignment (integer | float | tz_string)
 recommended_metadata  ::= ('doi' | 'reference') assignment value
 other_metadata        ::= key assignment value
 
