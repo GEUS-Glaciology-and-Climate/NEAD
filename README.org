@@ -50,7 +50,7 @@ required_metadata     ::= ('field_delimiter' assignment field_delimiter) |
                           ('srid' assignment EPSG_code)
 recommended_metadata  ::= ('station_id' assignment alphanumeric)
 recommended_metadata  ::= ('timestamp_meaning' assignment timestamp_meanings)
-recommended_metadata  ::= ('nodata' | 'tz' ) assignment (integer | float)
+recommended_metadata  ::= ('nodata' | 'timezone' ) assignment (integer | float)
 recommended_metadata  ::= ('comment' |
                            'institution' |
                            'source' |
@@ -145,7 +145,7 @@ cat summit.csv
 # srid = EPSG:4326
 # geometry = POINTZ (38.5053 72.5794 3199)
 # nodata = -999
-# tz = 0
+# timezone = 0
 # field_delimiter = ,
 # [FIELDS]
 # fields = timestamp,ISWR,OSWR,NSWR,TA1,TA2,RH1,RH2,VW1,VW2,DW1,DW2,P,HS1,HS2,V
