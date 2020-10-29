@@ -61,8 +61,8 @@ fields_section        ::= (('#' ((whitespace ( required_fields |
                                                recommended_fields |
                                                other_fields ))? )? lineend ) | newline)+
 required_fields       ::= ('fields' assignment values)
-recommended_fields    ::= ('scale_factor' |
-                           'add_offset' |
+recommended_fields    ::= ('units_multiplier' |
+                           'units_offset' |
                            'units' |
                            'long_name' |
                            'standard_name') assignment values
@@ -140,21 +140,17 @@ cat summit.csv
 # station_id = 803027F4
 # station_name = GC-NET GOES station Summit Station
 # srid = EPSG:4326
-# geometry = POINTZ (38.5053 72.5794 3199)
+# geometry = POINTZ(38.5053, 72.5794, 3199)
 # nodata = -999
 # timezone = 0
 # field_delimiter = ,
+#
 # [FIELDS]
 # fields = timestamp,ISWR,OSWR,NSWR,TA1,TA2,RH1,RH2,VW1,VW2,DW1,DW2,P,HS1,HS2,V
-# add_value = 0,0,0,0,273.15,273.15,0,0,0,0,0,0,0,0,0,0
-# scale_factor = 1,1,1,1,1,1,0.01,0.01,1,1,1,1,100,1,1,1
-# display_units = time,W/m2,W/m2,W/m2,°C,°C,%,%,m/s,m/s,°,°,mbar,m,m,V
-# display_description = timestamp_iso,short_wave_incoming_radiation,short_wave_outgoing_radiation,net_radiation,air_temperature_1,air_temperature_2,relative_humidity_1,relative_humidity_2,wind_speed_1,wind_speed_2,wind_direction_1,wind_direction_2,atmospheric_pressure,snow_height_1,snow_height_2,battery_voltage
-# database_fields = timestamp_iso,swin,swout,netrad,airtemp1,airtemp2,rh1,rh2,windspeed1,windspeed2,winddir1,winddir2,pressure,sh1,sh2,battvolt
-# database_fields_data_types = timestamp,real,real,real,real,real,real,real,real,real,real,real,real,real,real,real
+# units_offset = 0,0,0,0,273.15,273.15,0,0,0,0,0,0,0,0,0,0
+# units_multiplier = 1,1,1,1,1,1,0.01,0.01,1,1,1,1,100,1,1,1
 # 
 # [DATA]
-# 
 1996-05-12 11:00:00+00,356.6,288.29,-999,-999,-999,96.05,94.79,3.84,4.2,186.5,-999,691.7,-999,0.05,4.59
 1996-05-12 12:00:00+00,489.3,453,-999,-999,-999,95.55,94.04,4.11,4.5,205.5,-999,691.8,-999,0.01,1.05
 1996-05-12 13:00:00+00,622,506.87,-15.43,-999,-999,91.01,90.89,3.39,3.58,165.3,-999,692,-999,0,0
