@@ -25,7 +25,8 @@ Note - Here we use the EBNF notation from the [[https://www.w3.org/TR/2010/REC-x
 
 * Citation
 
-Iosifescu Enescu, I., Bavay, M., Plattner, G.-K. (2020). Sharing and reusing meteorological data. WMO Data Conference 2020 - Earth System Data Exchange in the 21st Century (Virtual Conference).
+Ionut Iosifescu Enescu; Mathias Bavay; Kenneth Mankoff (2020). New Environmental Data Archive (NEAD) format. EnviDat. doi:
+10.16904/envidat.187
 
 * File format: EBNF syntax
 
