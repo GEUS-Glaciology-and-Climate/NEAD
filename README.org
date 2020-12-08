@@ -1,4 +1,4 @@
-#+TITLE: NEAD - New Environmental Archive Data - format specification
+#+TITLE: NEAD - Non-binary Environmental Archive Data - format specification
 
 
 * Table of contents                               :toc_3:noexport:
@@ -11,7 +11,7 @@
 
 * Introduction
 
-This document describes the NEAD (New Environmental Archive Data) file format.
+This document describes the NEAD (Non-binary Environmental Archive Data) file format.
 
 The NEAD format is a delimiter separated value (DSV) format similar to CSV, but with a header section, followed by the data section ([[./summit.csv][example]]). This document describes the format using [[https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form][Extended Bakus-Naur form (EBNF)]] syntax (below) or graphically at https://raw.githubusercontent.com/GEUS-PROMICE/NEAD/main/NEAD.svg 
 
